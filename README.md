@@ -21,4 +21,7 @@ matrix algebra notes for engineering with examples
     - Determinants
     - Eigenvalue Problem
     - Matrix Diagonalization
+- Mechanical engineering examples
+- Electrical engineering examples
+
 
