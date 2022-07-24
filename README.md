@@ -9,6 +9,9 @@ matrix algebra notes for engineering with examples
     - Transpose Matrices
     - Inverse Matrices
     - Ortogonal Matrices
-- System of linear equation
+- System of Linear Equation
     - Gaussian Elimination
     - LU Decomposition
+- Vector Spaces
+- Eigenvalues and Eigenvectors
+
