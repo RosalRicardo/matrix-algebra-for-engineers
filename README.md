@@ -13,5 +13,12 @@ matrix algebra notes for engineering with examples
     - Gaussian Elimination
     - LU Decomposition
 - Vector Spaces
+    - Vector Space
+    - Gram Schmidt Process
+    - Subspace of a Matrix
+    - Orthogonal Projections
 - Eigenvalues and Eigenvectors
+    - Determinants
+    - Eigenvalue Problem
+    - Matrix Diagonalization
 
