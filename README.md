@@ -34,6 +34,12 @@ WIP
 - Biology Examples
     - genotype inherintance
 
+## References
 
+```
+Matrix Algebra for Engineers - Jeffrey R. Chasnov
+Linear Algebra and Linear Operators for Engineering - Davis and Thomson
+Introduction to Linear Algebra with Applications - DeFranze and Gagliardi
+```
 
 
