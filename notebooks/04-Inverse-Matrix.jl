@@ -4,152 +4,93 @@
 using Markdown
 using InteractiveUtils
 
-# ╔═╡ 70e4cad6-eea9-4399-a76b-15cf7893e69b
+# ╔═╡ a927ec65-a31a-42eb-8804-eeab8d5b48b2
+begin
+using Test
 using PlutoUI
+end
 
-# ╔═╡ d94748fa-0ae1-11ed-3ad1-79dbc2462fc6
+# ╔═╡ fc55da29-160d-4e19-87cb-9a08dcf5f6cd
+PlutoUI.TableOfContents()
+
+# ╔═╡ c5601d29-b65c-4f9c-84d6-fff4c2b2959f
 md"""
-# Matrix algebra for engineers
-"""
+## Inverse matrices
 
-# ╔═╡ cf655feb-d090-458a-ba34-2930cda2d9f4
-TableOfContents()
+square matrices ``(n \times n)`` could have a inverse matrix. A **inverse matrix** is defined as the matrix that multiplied by an given matrix is equal the identity matrix.
 
-# ╔═╡ 802b5024-f0fd-417a-b00e-59081e158187
-md"""
-## Matrix Definitions
-
-A matrix is a retangular array of numbers with dimensions ``\text{(m x n)}``, where m is the number of rows and n is the number of columns.
-"""
-
-# ╔═╡ 34aec16e-84e7-4d3c-9b85-8c495b3d1ae9
-md"""
-### common matrices definitions
- - **square matrix** : ``\text{m = n}``
- - **vectors** : where ``\text{m = 1 || n = 1}``
-    - when the ``m = 1`` it is a *column vector*
-    - when the ``n = 1`` it is a *row vector*
- - **zero matrix** : all elements are equal to zero, symbolized by the number ``0``.
- - **identity matrx** : any matrix square multiplied by the identity matrix are equal to one, is defined by all ones on diagonal and zero otherwise, symbolized by the letter ``I``. always a square matrix.
- - **diagonal matrix** : the matrix is defined different of zero only on the diagonals of the matrix.
- - **tridiagonal matrix** : defined different of zero only on the three diagnoal of the matrix.
- - **upper triangular matrix** : defined different of zero only above the diagonal.
- - **lower triangular matrix** : defined different of zero only above the diagonal.
-"""
-
-# ╔═╡ 4ab6b7b4-7172-4d33-8cde-cb5eb1618264
-md"""
-### matrix operations
-- **matrix addition**:
 ```math
-\begin{pmatrix}
-a & b\\
-c & d
-\end{pmatrix}
-+
-\begin{pmatrix}
-e & f\\
-g & h
-\end{pmatrix}
-= 
-\begin{pmatrix}
-a+e & b+f\\
-c+g & d+h
-\end{pmatrix}
+\text{Given } A \text{ then }A^{-1}A = AA^{-1} = I
+
 ```
+"""
 
-- **matrix multiplication by scalar**
+# ╔═╡ 54d2117a-94f6-4e6c-8871-204d4cd9a914
+md"""
+### Properties os inverse matrices
+
+ - a matrix that has a inverse matrix is called an invertible matrix;
+ - if a matrix $A$ have an inverse matrix, then $A^T$ also have an inverse;
+ - the inverse of a matrix tranposed is equal to the transposed matrix inversed;
+    - ``(A^T)^{-1}=(A^{-1})^T``
+ - 
+"""
+
+# ╔═╡ b41c9af6-aae5-4d2b-9337-b634cc37392b
+begin
+	A = [1 2 3; 4 5 6; 7 8 8]
+	Ai = inv(A)
+end
+
+# ╔═╡ c022006d-0de2-4715-a4ca-c7eda4b98810
+@test inv(A') == inv(A)'
+
+# ╔═╡ 3ec321ff-c51f-4084-a1f1-c6fbea9985d9
+md"""
+### Formula to calculate the inverse matrix
+
+by solving a symbolic linear system we can derive a formula to evaluate the inverse matrix of a $2 \times 2$ system.
+
 ```math
-k\cdot
 \begin{pmatrix}
-a & b\\
+a & b \\
 c & d
+\end{pmatrix}
+\begin{pmatrix}
+x_1 & x_2 \\
+y_1 & y_2
 \end{pmatrix}
 =
 \begin{pmatrix}
-ka & kb\\
-kc & kd
+1 & 0 \\
+0 & 1
 \end{pmatrix}
 ```
 
-- **matrix multiplication**
+the solution is:
+
 ```math
 \begin{pmatrix}
-a & b\\
+a & b \\
 c & d
-\end{pmatrix}
-\cdot
+\end{pmatrix}^{-1}
+=
+\frac{1}{ad-bc}
 \begin{pmatrix}
-e & f\\
-g & h
-\end{pmatrix}
-= 
-\begin{pmatrix}
-ae+bg & af+bh\\
-ce+dg & cf+dh
+b & -d \\
+-c & a
 \end{pmatrix}
 ```
-"""
 
-# ╔═╡ e1cb91c8-5ab3-4c88-ae2d-b0736bbdbdba
-md"""
-> sum of matrices
-"""
+where the term ``ad-bc`` is known as the **determinant** of the matrix, so a matrix is known as non invertible when the determinant is equal to **zero**.
 
-# ╔═╡ d77a9f1b-5a42-4189-94ca-6894a3845dca
-begin
-	A = [1 2;3 4]
-	B = [5 6;7 8]
-	C = A + B
-end
-
-# ╔═╡ 2431e1bd-e9ed-4cef-8ae6-967e721e869d
-md"""
-> multiplication of a matrix with a scalar
-"""
-
-# ╔═╡ aa4b753f-9ae6-4828-bbde-601bb586c960
-begin
-	D = [1 2;3 4]
-	k = 10
-	E = k*D
-end
-
-# ╔═╡ ba755304-aa9e-4d39-93b2-5273c1c6224b
-md"""
-> multiplication of matrices
-"""
-
-# ╔═╡ 7b0fd98f-2e27-46d4-ace6-de99fccd4b92
-begin
-	F = [1 2;3 4]
-	G = [5 6;7 8]
-	H = F * G
-end
-
-# ╔═╡ e5be01b9-7061-450c-9620-5c7585a94c90
-md"""
-**Important notes!** 
-- matrices do not commute on multiplication, it means, change the order of the matrices in multiplication operations will return different results.
-- in order to be able to multiply matrices, the number of columns on the first matrix **must** match the number of rows in the second matrix.
-    - *e.g.:* ``C(m \times p) \leftarrow A(m \times n) \cdot B(n \times p)``
-"""
-
-# ╔═╡ 2c22cd86-ed2a-4989-8f53-2ae0b27d686e
-md"""
-### formula to calculate matrix multiplication coefficients
-```math
-\text{Given C = AB:}
-```
-```math
-c_{ij}=\sum_{k=1}^n a_{ik} b_{kj}
-```
 """
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
 [deps]
 PlutoUI = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [compat]
 PlutoUI = "~0.7.39"
@@ -368,19 +309,12 @@ uuid = "3f19e933-33d8-53b3-aaab-bd5110c3b7a0"
 """
 
 # ╔═╡ Cell order:
-# ╠═70e4cad6-eea9-4399-a76b-15cf7893e69b
-# ╟─d94748fa-0ae1-11ed-3ad1-79dbc2462fc6
-# ╟─cf655feb-d090-458a-ba34-2930cda2d9f4
-# ╟─802b5024-f0fd-417a-b00e-59081e158187
-# ╟─34aec16e-84e7-4d3c-9b85-8c495b3d1ae9
-# ╟─4ab6b7b4-7172-4d33-8cde-cb5eb1618264
-# ╟─e1cb91c8-5ab3-4c88-ae2d-b0736bbdbdba
-# ╠═d77a9f1b-5a42-4189-94ca-6894a3845dca
-# ╟─2431e1bd-e9ed-4cef-8ae6-967e721e869d
-# ╠═aa4b753f-9ae6-4828-bbde-601bb586c960
-# ╟─ba755304-aa9e-4d39-93b2-5273c1c6224b
-# ╠═7b0fd98f-2e27-46d4-ace6-de99fccd4b92
-# ╟─e5be01b9-7061-450c-9620-5c7585a94c90
-# ╠═2c22cd86-ed2a-4989-8f53-2ae0b27d686e
+# ╠═a927ec65-a31a-42eb-8804-eeab8d5b48b2
+# ╠═fc55da29-160d-4e19-87cb-9a08dcf5f6cd
+# ╟─c5601d29-b65c-4f9c-84d6-fff4c2b2959f
+# ╟─54d2117a-94f6-4e6c-8871-204d4cd9a914
+# ╠═b41c9af6-aae5-4d2b-9337-b634cc37392b
+# ╠═c022006d-0de2-4715-a4ca-c7eda4b98810
+# ╟─3ec321ff-c51f-4084-a1f1-c6fbea9985d9
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
