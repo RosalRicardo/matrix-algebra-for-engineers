@@ -11,7 +11,7 @@ WIP
     - [Transpose Matrices](https://github.com/RosalRicardo/matrix-algebra-for-engineers/blob/main/notebooks/02-Transpose-Matrix.jl)
     - [Inner and Outer Products](https://github.com/RosalRicardo/matrix-algebra-for-engineers/blob/main/notebooks/03-Inner-and-outer-products.jl)
     - [Inverse Matrices](https://github.com/RosalRicardo/matrix-algebra-for-engineers/blob/main/notebooks/04-Inverse-Matrix.jl)
-    - Ortogonal Matrices
+    - [Ortogonal Matrices](https://github.com/RosalRicardo/matrix-algebra-for-engineers/blob/main/notebooks/05-Orthogonal-matrices.jl)
 - System of Linear Equation
     - Gaussian Elimination
     - LU Decomposition
