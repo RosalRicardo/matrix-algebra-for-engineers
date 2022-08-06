@@ -1,11 +1,11 @@
 <!--
 Add here global page variables to use throughout your website.
 -->
-@def prepath = "matrix-algebra-for-engineers"
 
 +++
 author = "Ricardo Rosal"
 mintoclevel = 3
+prepath = "matrix-algebra-for-engineers"
 
 # Add here files or directories that should be ignored by Franklin, otherwise
 # these files might be copied and, if markdown, processed by Franklin which
