@@ -2,6 +2,10 @@
 Add here global page variables to use throughout your website.
 -->
 
+@def prepath = "matrix-algebra-for-engineers"
+
+@def website_title = "Matrix Algebra @def website_descr = "Matrix Algebra for Engineers"" @def website_url = "https://rosalricardo.github.io/matrix-algebra-for-engineers/"
+
 +++
 author = "Ricardo Rosal"
 mintoclevel = 3
