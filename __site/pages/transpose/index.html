@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="/libs/katex/katex.min.css">
+     
+   <link rel="stylesheet" href="/libs/highlight/styles/github.min.css">
+   
+  <link rel="stylesheet" href="/css/franklin.css">
+<link rel="stylesheet" href="/css/jemdoc.css">
+<link rel="icon" href="/assets/favicon.png">
+
+   <title>Transpose Matrices</title>  
+</head>
+<body>
+<main class="outside">
+  <div class="box">
+    <aside class="layout-menu">
+      <div class="menu-category">Home</div>
+      <div class="menu-item "><a href="/">Home</a></div>
+    <div class="menu-category">topics</div>
+      <div class="menu-item "><a href="/pages/matrices">Matrices Definitions</a></div>
+      <div class="menu-item "><a href="/pages/transpose">Transpose Matrices</a></div>
+    </aside>
+    <div class="layout-content">
+
+
+<!-- Content appended here -->
+<div class="franklin-content">
+<h1 id="transpose_matrices"><a href="#transpose_matrices" class="header-anchor">Transpose Matrices</a></h1>
+<p><strong>Tranpose</strong> is a matrix operation that switches the rows and the columns a matrix.</p>
+<p>Given an arbritary matrix \(A\), we can symbolize the transposed matrix of it as \( A^{T} \).</p>
+<p>e.g.:</p>
+\[
+\text{Given }
+A = \begin{pmatrix}
+1 & 2 & 3\\
+4 & 5 & 6
+\end{pmatrix}
+
+\text{ then }
+
+A^{T} = \begin{pmatrix}
+1 & 4\\
+2 & 5\\
+3 & 6
+\end{pmatrix}
+\]
+<h3 id="properties_of_transpose_matrix"><a href="#properties_of_transpose_matrix" class="header-anchor">Properties of Transpose Matrix</a></h3>
+<ul>
+<li><p>\( a^{T}_{ij} = a_{ji} \)</p>
+<ul>
+<li><p>to evaluate the any component of a tranpose matrix, you can only swap the coordinates.</p>
+</li>
+</ul>
+</li>
+<li><p>\( (A^{T})^{T} = A \)</p>
+<ul>
+<li><p>the tranpose of a tranposed matrix, is equal to the original matrix.</p>
+</li>
+</ul>
+</li>
+<li><p>\( (A + B)^{T} = A^T + B^T \)</p>
+<ul>
+<li><p>the transpose of a sum of matrices is equal to the sum of the same transposed matrices.</p>
+</li>
+</ul>
+</li>
+<li><p>\( (AB)^{T} = B^T A^T \)</p>
+<ul>
+<li><p>the tranpose of a product of matrices is equal to the product of the tranposed matrices with inverted order.</p>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-julia">A &#61; &#91;1 2;3 4&#93;
+	A_tranposed &#61; transpose&#40;A&#41;</code></pre>
+
+<h3 id="symmetric_matrix"><a href="#symmetric_matrix" class="header-anchor">Symmetric Matrix</a></h3>
+<p>A <strong>symmetric matrix</strong> is defined as a matrix where the transpose of the matrix is equal the matrix itself.</p>
+\[
+A^T=A
+\]
+\[
+\text{ then }
+A =\begin{pmatrix}
+a & b & c \\
+b & d & e \\
+c & e & f \\
+\end{pmatrix}
+\text{ then }
+A^T =\begin{pmatrix}
+a & b & c \\
+b & d & e \\
+c & e & f \\
+\end{pmatrix}
+\]
+<p>A <strong>skew-symmetric matrix</strong> is matrix that given a matrix \(A\), by take the transpose matrix \(A^T\), it results on the negative matrix \(-A\).</p>
+\[
+A^T=-A
+\]
+\[
+\text{ then }
+A =\begin{pmatrix}
+a & b & c \\
+-b & d & e \\
+-c & -e & f \\
+\end{pmatrix}
+\text{ then }
+A^T =\begin{pmatrix}
+a & -b & -c \\
+b & d & -e \\
+c & e & f \\
+\end{pmatrix}
+\]
+<div class="page-foot">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> Ricardo Rosal. Last modified: August 05, 2022.
+    Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+</div>
+</div><!-- CONTENT ENDS HERE -->
+        </div>
+    
+        <script src="/libs/katex/katex.min.js"></script>
+<script src="/libs/katex/contrib/auto-render.min.js"></script>
+<script>renderMathInElement(document.body)</script>
+
+    
+    
+        <script src="/libs/highlight/highlight.min.js"></script>
+<script>hljs.highlightAll();hljs.configure({tabReplace: '    '});</script>
+
+    
+    </div>
+  </main>
+  </body>
+</html>

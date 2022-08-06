@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="/libs/katex/katex.min.css">
+     
+   <link rel="stylesheet" href="/libs/highlight/styles/github.min.css">
+   
+  <link rel="stylesheet" href="/css/franklin.css">
+<link rel="stylesheet" href="/css/jemdoc.css">
+<link rel="icon" href="/assets/favicon.png">
+
+   <title>Matrix definitions</title>  
+</head>
+<body>
+<main class="outside">
+  <div class="box">
+    <aside class="layout-menu">
+      <div class="menu-category">jemdoc</div>
+      <div class="menu-item "><a href="/">Home</a></div>
+    <div class="menu-category">topics</div>
+      <div class="menu-item "><a href="/menu1/">Code blocks</a></div>
+      <div class="menu-item "><a href="/menu2/">More goodies</a></div>
+      <div class="menu-item "><a href="/menu3/">Tags</a></div>
+    </aside>
+    <div class="layout-content">
+
+
+<!-- Content appended here -->
+<div class="franklin-content">
+<h1 id="matrix_definitions"><a href="#matrix_definitions" class="header-anchor">Matrix Definitions</a></h1>
+<p>A matrix is a retangular array of numbers with dimensions \(\text{(m x n)}\), where m is the number of rows and n is the number of columns.</p>
+<h3 id="common_matrices_definitions"><a href="#common_matrices_definitions" class="header-anchor">common matrices definitions</a></h3>
+<ul>
+<li><p><strong>square matrix</strong> : \(\text{m = n}\)</p>
+</li>
+<li><p><strong>vectors</strong> : where \(\text{m = 1 || n = 1}\)</p>
+<ul>
+<li><p>when the \( m = 1 \) it is a <em>column vector</em></p>
+</li>
+<li><p>when the \( n = 1 \) it is a <em>row vector</em></p>
+</li>
+</ul>
+</li>
+<li><p><strong>zero matrix</strong> : all elements are equal to zero, symbolized by the number \(0\).</p>
+</li>
+<li><p><strong>identity matrx</strong> : any matrix square multiplied by the identity matrix are equal to one, is defined by all ones on diagonal and zero otherwise, symbolized by the letter \(I\). always a square matrix.</p>
+</li>
+<li><p><strong>diagonal matrix</strong> : the matrix is defined different of zero only on the diagonals of the matrix.</p>
+</li>
+<li><p><strong>tridiagonal matrix</strong> : defined different of zero only on the three diagnoal of the matrix.</p>
+</li>
+<li><p><strong>upper triangular matrix</strong> : defined different of zero only above the diagonal.</p>
+</li>
+<li><p><strong>lower triangular matrix</strong> : defined different of zero only above the diagonal.</p>
+</li>
+</ul>
+<h3>matrix operations</h3>
+<ul>
+<li><p><strong>matrix addition</strong>:</p>
+</li>
+</ul>
+\[
+\begin{pmatrix}
+a & b\\
+c & d
+\end{pmatrix}
++
+\begin{pmatrix}
+e & f\\
+g & h
+\end{pmatrix}
+= 
+\begin{pmatrix}
+a+e & b+f\\
+c+g & d+h
+\end{pmatrix}
+\]
+<ul>
+<li><p><strong>matrix multiplication by scalar</strong></p>
+</li>
+</ul>
+\[
+k\cdot
+\begin{pmatrix}
+a & b\\
+c & d
+\end{pmatrix}
+=
+\begin{pmatrix}
+ka & kb\\
+kc & kd
+\end{pmatrix}
+\]
+<ul>
+<li><p><strong>matrix multiplication</strong></p>
+</li>
+</ul>
+\[
+\begin{pmatrix}
+a & b\\
+c & d
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+e & f\\
+g & h
+\end{pmatrix}
+= 
+\begin{pmatrix}
+ae+bg & af+bh\\
+ce+dg & cf+dh
+\end{pmatrix}
+\]
+<h3 id="julia_code_snippets"><a href="#julia_code_snippets" class="header-anchor">Julia code snippets</a></h3>
+<pre><code class="language-julia">A &#61; &#91;1 2;3 4&#93;
+B &#61; &#91;5 6;7 8&#93;
+C &#61; A &#43; B</code></pre>
+
+<pre><code class="language-julia">D &#61; &#91;1 2;3 4&#93;
+k &#61; 10
+E &#61; k*D</code></pre>
+
+<pre><code class="language-julia">F &#61; &#91;1 2;3 4&#93;
+G &#61; &#91;5 6;7 8&#93;
+H &#61; F * G</code></pre>
+
+<p><strong>Important notes&#33;</strong> </p>
+<ul>
+<li><p>matrices do not commute on multiplication, it means, change the order of the matrices in multiplication operations will return different results.</p>
+</li>
+<li><p>in order to be able to multiply matrices, the number of columns on the first matrix <strong>must</strong> match the number of rows in the second matrix.</p>
+<ul>
+<li><p><em>e.g.:</em> \(C(m \times p) \leftarrow A(m \times n) \cdot B(n \times p)\)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="formula_to_calculate_matrix_multiplication_coefficients"><a href="#formula_to_calculate_matrix_multiplication_coefficients" class="header-anchor">formula to calculate matrix multiplication coefficients</a></h3>
+\[
+\text{Given C = AB:}
+\]
+\[
+c_{ij}=\sum_{k=1}^n a_{ik} b_{kj}
+\]
+<div class="page-foot">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> Ricardo Rosal. Last modified: July 30, 2022.
+    Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+</div>
+</div><!-- CONTENT ENDS HERE -->
+        </div>
+    
+        <script src="/libs/katex/katex.min.js"></script>
+<script src="/libs/katex/contrib/auto-render.min.js"></script>
+<script>renderMathInElement(document.body)</script>
+
+    
+    
+        <script src="/libs/highlight/highlight.min.js"></script>
+<script>hljs.highlightAll();hljs.configure({tabReplace: '    '});</script>
+
+    
+    </div>
+  </main>
+  </body>
+</html>
