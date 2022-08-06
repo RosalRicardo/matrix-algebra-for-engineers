@@ -2,12 +2,6 @@
 Add here global page variables to use throughout your website.
 -->
 
-@def prepath = "matrix-algebra-for-engineers"
-
-@def website_title = "Matrix Algebra"
-@def website_descr = "Matrix Algebra for Engineers"
-@def website_url = "https://rosalricardo.github.io/matrix-algebra-for-engineers/"
-
 +++
 author = "Ricardo Rosal"
 mintoclevel = 3
@@ -25,6 +19,11 @@ website_title = "Engineering matrix algebra"
 website_descr = "matrix algebra for engineers"
 website_url   = "https://tlienart.github.io/FranklinTemplates.jl/"
 +++
+
+@def prepath = "matrix-algebra-for-engineers"
+@def website_title = "Matrix Algebra"
+@def website_descr = "Matrix Algebra for Engineers"
+@def website_url = "https://rosalricardo.github.io/matrix-algebra-for-engineers/"
 
 <!--
 Add here global latex commands to use throughout your pages.
