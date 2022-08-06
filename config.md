@@ -5,7 +5,6 @@ Add here global page variables to use throughout your website.
 +++
 author = "Ricardo Rosal"
 mintoclevel = 3
-prepath = "matrix-algebra-for-engineers"
 
 # Add here files or directories that should be ignored by Franklin, otherwise
 # these files might be copied and, if markdown, processed by Franklin which
@@ -17,7 +16,7 @@ ignore = ["node_modules/","references/",]
 generate_rss = true
 website_title = "Engineering matrix algebra"
 website_descr = "matrix algebra for engineers"
-website_url   = "https://tlienart.github.io/FranklinTemplates.jl/"
+website_url   = "https://rosalricardo.github.io/matrix-algebra-for-engineers/"
 +++
 
 @def prepath = "matrix-algebra-for-engineers"
