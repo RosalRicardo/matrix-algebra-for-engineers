@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+   <link rel="stylesheet" href="/libs/highlight/styles/github.min.css">
+   
+  <link rel="stylesheet" href="/css/franklin.css">
+<link rel="stylesheet" href="/css/jemdoc.css">
+<link rel="icon" href="/assets/favicon.png">
+
+   <title>Matrix definitions</title>  
+</head>
+<body>
+<main class="outside">
+  <div class="box">
+    <aside class="layout-menu">
+      <div class="menu-category">jemdoc</div>
+      <div class="menu-item "><a href="/">Home</a></div>
+    <div class="menu-category">topics</div>
+      <div class="menu-item "><a href="/menu1/">Code blocks</a></div>
+      <div class="menu-item "><a href="/menu2/">More goodies</a></div>
+      <div class="menu-item "><a href="/menu3/">Tags</a></div>
+    </aside>
+    <div class="layout-content">
+
+
+<!-- Content appended here -->
+<div class="franklin-content">
+<h1 id="matrix_algebra_for_engineers"><a href="#matrix_algebra_for_engineers" class="header-anchor">Matrix algebra for engineers</a></h1>
+<h2 id="matrix_definitions"><a href="#matrix_definitions" class="header-anchor">Matrix Definitions</a></h2>
+<p>A matrix is a retangular array of numbers with dimensions <code>\text&#123;&#40;m x n&#41;&#125;</code>, where m is the number of rows and n is the number of columns.</p>
+<h3 id="common_matrices_definitions"><a href="#common_matrices_definitions" class="header-anchor">common matrices definitions</a></h3>
+<ul>
+<li><p><strong>square matrix</strong> : <code>\text&#123;m &#61; n&#125;</code></p>
+</li>
+<li><p><strong>vectors</strong> : where <code>\text&#123;m &#61; 1 || n &#61; 1&#125;</code></p>
+<ul>
+<li><p>when the <code>m &#61; 1</code> it is a <em>column vector</em></p>
+</li>
+<li><p>when the <code>n &#61; 1</code> it is a <em>row vector</em></p>
+</li>
+</ul>
+</li>
+<li><p><strong>zero matrix</strong> : all elements are equal to zero, symbolized by the number <code>0</code>.</p>
+</li>
+<li><p><strong>identity matrx</strong> : any matrix square multiplied by the identity matrix are equal to one, is defined by all ones on diagonal and zero otherwise, symbolized by the letter <code>I</code>. always a square matrix.</p>
+</li>
+<li><p><strong>diagonal matrix</strong> : the matrix is defined different of zero only on the diagonals of the matrix.</p>
+</li>
+<li><p><strong>tridiagonal matrix</strong> : defined different of zero only on the three diagnoal of the matrix.</p>
+</li>
+<li><p><strong>upper triangular matrix</strong> : defined different of zero only above the diagonal.</p>
+</li>
+<li><p><strong>lower triangular matrix</strong> : defined different of zero only above the diagonal.</p>
+</li>
+</ul>
+<h3>matrix operations</h3>
+<ul>
+<li><p><strong>matrix addition</strong>:</p>
+</li>
+</ul>
+<pre><code class="language-math">\begin&#123;pmatrix&#125;
+a &amp; b\\
+c &amp; d
+\end&#123;pmatrix&#125;
+&#43;
+\begin&#123;pmatrix&#125;
+e &amp; f\\
+g &amp; h
+\end&#123;pmatrix&#125;
+&#61; 
+\begin&#123;pmatrix&#125;
+a&#43;e &amp; b&#43;f\\
+c&#43;g &amp; d&#43;h
+\end&#123;pmatrix&#125;</code></pre>
+<ul>
+<li><p><strong>matrix multiplication by scalar</strong></p>
+</li>
+</ul>
+<pre><code class="language-math">k\cdot
+\begin&#123;pmatrix&#125;
+a &amp; b\\
+c &amp; d
+\end&#123;pmatrix&#125;
+&#61;
+\begin&#123;pmatrix&#125;
+ka &amp; kb\\
+kc &amp; kd
+\end&#123;pmatrix&#125;</code></pre>
+<ul>
+<li><p><strong>matrix multiplication</strong></p>
+</li>
+</ul>
+<pre><code class="language-math">\begin&#123;pmatrix&#125;
+a &amp; b\\
+c &amp; d
+\end&#123;pmatrix&#125;
+\cdot
+\begin&#123;pmatrix&#125;
+e &amp; f\\
+g &amp; h
+\end&#123;pmatrix&#125;
+&#61; 
+\begin&#123;pmatrix&#125;
+ae&#43;bg &amp; af&#43;bh\\
+ce&#43;dg &amp; cf&#43;dh
+\end&#123;pmatrix&#125;</code></pre>
+<pre><code class="language-julia">using LinearAlgebra
+a &#61; &#91;1, 2, 3, 3, 4, 5, 2, 2&#93;
+@show dot&#40;a, a&#41;
+println&#40;dot&#40;a, a&#41;&#41;</code></pre>
+<pre><code class="plaintext code-output">dot(a, a) = 72
+72
+</code></pre>
+<div class="page-foot">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> Ricardo Rosal. Last modified: July 30, 2022.
+    Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+</div>
+</div><!-- CONTENT ENDS HERE -->
+        </div>
+    
+    
+        <script src="/libs/highlight/highlight.min.js"></script>
+<script>hljs.highlightAll();hljs.configure({tabReplace: '    '});</script>
+
+    
+    </div>
+  </main>
+  </body>
+</html>
